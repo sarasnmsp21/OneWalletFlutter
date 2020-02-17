@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testflutter/widgets/customradiobutton.dart';
 import '../screens/enteropt.dart';
 
 class SingUpPage extends StatelessWidget {
@@ -100,7 +101,7 @@ class _SignUpState extends State<SignUp> {
               right: 20.0,
               left: 20.0),
           child: new Container(
-            height: 350.0,
+            height: 450.0,
             width: MediaQuery.of(context).size.width,
             child: new Card(
               shape: RoundedRectangleBorder(
@@ -120,6 +121,9 @@ class _SignUpState extends State<SignUp> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
+                            Radio(
+                             
+                            ),
                             TextFormField(
                               autovalidate: _autoValidate,
                               validator: emailValidatorFunc,
@@ -187,7 +191,7 @@ class _SignUpState extends State<SignUp> {
                                 textAlign: TextAlign.center,
                                 style: TextStyle(fontSize: 10),
                               ),
-                            )
+                            ),
                           ],
                         ),
                       ),

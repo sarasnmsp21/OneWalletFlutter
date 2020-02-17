@@ -23,7 +23,7 @@ class _WalletAppState extends State<WalletApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: HomeScreen(),
+        child: WelcomeScreen(),
       ),
     );
   }

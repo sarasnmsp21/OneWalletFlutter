@@ -52,19 +52,159 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Icon(
-                  Icons.chevron_left,
-                  color: Colors.white,
-                  size: 50,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Container(
+                      child: Row(
+                        children: <Widget>[
+                          CircleAvatar(
+                            radius: 25,
+                            backgroundColor: Colors.white,
+                            child: ClipOval(
+                              child: Image.asset(
+                                "assets/logo.png",
+                                fit: BoxFit.contain,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      child: Row(
+                        children: <Widget>[
+                          Icon(
+                            Icons.import_export,
+                            color: Colors.white,
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Text(
+                            'Customer Mode',
+                            style: TextStyle(color: Colors.white, fontSize: 20),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Icon(
+                      Icons.notifications,
+                      color: Colors.white,
+                    ),
+                  ],
                 ),
-                Text('Home Page',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 25,
-                        color: Colors.white)),
-                const SizedBox(height: 10),
-                Text('For registered users',
-                    style: TextStyle(fontSize: 15, color: Colors.white)),
+                SizedBox(height: 15),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(40.0, 0.0, 40.0, 0.0),
+                  child: RaisedButton(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5)),
+                    onPressed: () {},
+                    padding: const EdgeInsets.fromLTRB(0.0, 0, 00, 0),
+                    textColor: Colors.white,
+                    color: Colors.orange,
+                    child: Container(
+                      width: 30,
+                      padding: const EdgeInsets.all(0),
+                      decoration: const BoxDecoration(),
+                      child: const Text('UPI',
+                          style: TextStyle(fontSize: 15, color: Colors.white)),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(40.0, 0.0, 40.0, 0.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Container(
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              decoration: BoxDecoration(
+                                  color: Color.fromRGBO(243, 245, 248, 1),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(8))),
+                              child: Icon(
+                                Icons.date_range,
+                                color: Colors.blue[900],
+                                size: 30,
+                              ),
+                              padding: EdgeInsets.all(12),
+                            ),
+                            SizedBox(
+                              height: 12,
+                            ),
+                            Text(
+                              "Pay",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 14,
+                                  color: Colors.blue[100]),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              decoration: BoxDecoration(
+                                  color: Color.fromRGBO(243, 245, 248, 1),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(8))),
+                              child: Icon(
+                                Icons.public,
+                                color: Colors.blue[900],
+                                size: 30,
+                              ),
+                              padding: EdgeInsets.all(12),
+                            ),
+                            SizedBox(
+                              height: 12,
+                            ),
+                            Text(
+                              "Scan QR",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 14,
+                                  color: Colors.blue[100]),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              decoration: BoxDecoration(
+                                  color: Color.fromRGBO(243, 245, 248, 1),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(8))),
+                              child: Icon(
+                                Icons.trending_down,
+                                color: Colors.blue[900],
+                                size: 30,
+                              ),
+                              padding: EdgeInsets.all(12),
+                            ),
+                            SizedBox(
+                              height: 12,
+                            ),
+                            Text(
+                              "House QR",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 14,
+                                  color: Colors.blue[100]),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                )
               ],
             ),
           ),
@@ -77,18 +217,19 @@ class _HomeScreenState extends State<HomeScreen> {
               children: <Widget>[
                 SizedBox(height: 20),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text(
                       'Bills to pay',
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
-                    Icon(Icons.chevron_right)
+                    Icon(Icons.trending_flat)
                   ],
                 ),
                 SizedBox(height: 20),
                 Container(
-                  height: 200.0,
+                  height: 180.0,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: <Widget>[
@@ -104,93 +245,43 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              Text('Electricity',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15,
-                                      color: Colors.white)),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Text('Electricy Bill',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 25,
+                                          color: Colors.white)),
+                                  Icon(
+                                    Icons.cancel,
+                                    color: Colors.white,
+                                  ),
+                                ],
+                              ),
                               SizedBox(height: 30),
-                              Text('77777',
+                              Text('\$ 77777',
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 25,
                                       color: Colors.white)),
-                              SizedBox(height: 10),
-                              Text('Due Date: 15/01/2020',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15,
-                                      color: Colors.white)),
-                              SizedBox(height: 10),
-                            ],
-                          ),
-                        ),
-                      ),
-                      SizedBox(width: 10),
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                          color: Colors.blue,
-                        ),
-                        height: 100.0,
-                        width: 300.0,
-                        child: Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text('Electricity',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15,
-                                      color: Colors.white)),
-                              SizedBox(height: 30),
-                              Text('77777',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 25,
-                                      color: Colors.white)),
-                              SizedBox(height: 10),
-                              Text('Due Date: 15/01/2020',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15,
-                                      color: Colors.white)),
-                              SizedBox(height: 10),
-                            ],
-                          ),
-                        ),
-                      ),
-                      SizedBox(width: 10),
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                          color: Colors.green,
-                        ),
-                        height: 100.0,
-                        width: 300.0,
-                        child: Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text('Electricity',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15,
-                                      color: Colors.white)),
-                              SizedBox(height: 30),
-                              Text(' 77777',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 25,
-                                      color: Colors.white)),
-                              SizedBox(height: 10),
-                              Text('Due Date: 15/01/2020',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15,
-                                      color: Colors.white)),
+                              SizedBox(height: 20),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Text('Due Date: 15/01/2020',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 15,
+                                          color: Colors.white)),
+                                  Icon(
+                                    Icons.arrow_upward,
+                                    color: Colors.white,
+                                  ),
+                                ],
+                              ),
                               SizedBox(height: 10),
                             ],
                           ),
@@ -209,23 +300,153 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              Text('Electricity',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15,
-                                      color: Colors.white)),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Text('Water Bill',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 25,
+                                          color: Colors.white)),
+                                  Icon(
+                                    Icons.cancel,
+                                    color: Colors.white,
+                                  ),
+                                ],
+                              ),
                               SizedBox(height: 30),
-                              Text('77777',
+                              Text('\$ 77777',
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 25,
                                       color: Colors.white)),
+                              SizedBox(height: 20),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Text('Due Date: 15/01/2020',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 15,
+                                          color: Colors.white)),
+                                  Icon(
+                                    Icons.arrow_upward,
+                                    color: Colors.white,
+                                  ),
+                                ],
+                              ),
                               SizedBox(height: 10),
-                              Text('Due Date: 15/01/2020',
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 10),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                          color: Colors.blue,
+                        ),
+                        height: 100.0,
+                        width: 300.0,
+                        child: Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Text('Newspaper',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 25,
+                                          color: Colors.white)),
+                                  Icon(
+                                    Icons.cancel,
+                                    color: Colors.white,
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 30),
+                              Text('\$ 77777',
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 15,
+                                      fontSize: 25,
                                       color: Colors.white)),
+                              SizedBox(height: 20),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Text('Due Date: 15/01/2020',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 15,
+                                          color: Colors.white)),
+                                  Icon(
+                                    Icons.arrow_upward,
+                                    color: Colors.white,
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 10),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 10),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                          color: Colors.green,
+                        ),
+                        height: 100.0,
+                        width: 300.0,
+                        child: Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Text('Water',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 25,
+                                          color: Colors.white)),
+                                  Icon(
+                                    Icons.cancel,
+                                    color: Colors.white,
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 30),
+                              Text('\$ 77777',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 25,
+                                      color: Colors.white)),
+                              SizedBox(height: 20),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Text('Due Date: 15/01/2020',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 15,
+                                          color: Colors.white)),
+                                  Icon(
+                                    Icons.arrow_upward,
+                                    color: Colors.white,
+                                  ),
+                                ],
+                              ),
                               SizedBox(height: 10),
                             ],
                           ),
@@ -237,32 +458,109 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 SizedBox(height: 20),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text(
                       'Household Bills',
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
-                    Icon(Icons.chevron_right)
+                    Icon(Icons.trending_flat)
                   ],
                 ),
                 SizedBox(height: 20),
-                // GridView.builder(
-                //     gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
-                //         crossAxisCount: 3),
-                //     itemCount: 0,
-                //     itemBuilder: (BuildContext context, int index) {
-                //       return Container(
-                //           child: new Card(
-                //         elevation: 5.0,
-                //         child: new Container(
-                //           alignment: Alignment.centerLeft,
-                //           margin: new EdgeInsets.only(
-                //               top: 10.0, bottom: 10.0, left: 10.0),
-                //           child: new Text('hello'),
-                //         ),
-                //       ));
-                //     })
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(40.0, 0.0, 40.0, 0.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Container(
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(8))),
+                              child: Icon(
+                                Icons.date_range,
+                                color: Colors.blue[300],
+                                size: 30,
+                              ),
+                              padding: EdgeInsets.all(12),
+                            ),
+                            SizedBox(
+                              height: 12,
+                            ),
+                            Text(
+                              "Electricity",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 14,
+                                  color: Colors.black),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(8))),
+                              child: Icon(
+                                Icons.public,
+                                color: Colors.blue[300],
+                                size: 30,
+                              ),
+                              padding: EdgeInsets.all(12),
+                            ),
+                            SizedBox(
+                              height: 12,
+                            ),
+                            Text(
+                              "Newspaper",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 14,
+                                  color: Colors.black),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(8))),
+                              child: Icon(
+                                Icons.trending_down,
+                                color: Colors.blue[300],
+                                size: 30,
+                              ),
+                              padding: EdgeInsets.all(12),
+                            ),
+                            SizedBox(
+                              height: 12,
+                            ),
+                            Text(
+                              "Milk",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 14,
+                                  color: Colors.black),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
               ]),
         ),
       ],
